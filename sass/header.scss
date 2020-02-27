@@ -24,16 +24,16 @@ header {
                 transition: all .3s ease;
                 .dropdown-menu {
                     opacity: 0;
+                    transition: opacity .3s .1s ease;
                     ul {
                     margin-top: 2rem;
+                    height: fit-content;
                     position: absolute;
                     display: block;
-                    height: unset; 
                     background-color: white;
-                    left: -50%;
                     width: 200%;
+                    left: -50%;
                     box-shadow: 0 1px 5px 0 rgba($color: brown, $alpha: .3);
-                    transition: inherit;
                     li {
                         
                         &:hover {
@@ -41,7 +41,6 @@ header {
                             }
                         a {
                             padding: 5px;
-                            transition: inherit;
                             &:hover {
                                 color: brown;
                             }
@@ -75,11 +74,11 @@ header {
     opacity: 0;
 }
 &:hover {
-    a.menu {
+    a {
         color: brown;
     }
 }
-&:active,
+&:hover,
 &:focus {
     &::after {
         opacity: 1;
