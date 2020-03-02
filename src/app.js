@@ -6,9 +6,8 @@ import { magNum } from './articles'
 
 magNum.forEach((edition) => {
     const listItem = document.createElement('li')
-    listItem.innerHTML = `${edition.name} &#9662;</a>`
+    listItem.innerHTML = `<div class="expand"><span>${edition.name}</span><span>&#9662;</span></div>`
     document.querySelector('.side-menu').appendChild(listItem)
-    listItem.setAttribute('class', 'expand')
 
     const submenu = document.createElement('ul')
     listItem.appendChild(submenu)
@@ -26,8 +25,9 @@ magNum.forEach((edition) => {
 
 document.querySelectorAll('.expand').forEach((item) => {
     item.addEventListener('click', () => {
-        let childEl = event.toElement.firstElementChild
-        childEl.classList.toggle('show')
+        event.preventDefault()
+        let toggleEl = event.toElement.nextElementSibling
+        toggleEl.classList.toggle('show')
     })
 })
 

@@ -4,11 +4,14 @@
     ul {
         list-style: none;
         li {
-            padding: 1rem ;
             border: 1px solid brown;
-            a {
-                text-decoration: none;
-                color: black;
+            div.expand {
+                padding: 1rem;
+                display: flex;
+                justify-content: space-between;
+                &> * {
+                    pointer-events: none;
+                }
             }
             ul {
                 display: none;
