@@ -10,3 +10,24 @@ body {
     font-family: 'Raleway', sans-serif;
     color: black;
 }
+
+.site-layout {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    width: 800px;
+    flex: initial;
+    article {
+        margin: 20px;
+        p {
+            line-height: 1.5rem;
+            margin-top: 10px;
+        }
+    }
+}
+
+.side-bar {
+    flex: 1;
+}
