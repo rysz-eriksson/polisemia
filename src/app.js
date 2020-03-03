@@ -6,7 +6,7 @@ import { magNum } from './articles'
 
 magNum.forEach((edition) => {
     const listItem = document.createElement('li')
-    listItem.innerHTML = `<div class="expand"><span>${edition.name}</span><span>&#9662;</span></div>`
+    listItem.innerHTML = `<div class="expand"><span>${edition.name}</span><img src="images/keyboard_arrow_down-24px.svg"></div>`
     document.querySelector('.side-menu').appendChild(listItem)
 
     const submenu = document.createElement('ul')
@@ -28,6 +28,12 @@ document.querySelectorAll('.expand').forEach((item) => {
         event.preventDefault()
         let toggleEl = event.toElement.nextElementSibling
         toggleEl.classList.toggle('show')
+        let arrowEl = event.toElement.lastElementChild
+        if (arrowEl.getAttribute('src') === 'images/keyboard_arrow_down-24px.svg') {
+            arrowEl.setAttribute('src', 'images/keyboard_arrow_up-24px.svg')
+        } else {
+            arrowEl.setAttribute('src', 'images/keyboard_arrow_down-24px.svg')
+        }
     })
 })
 
