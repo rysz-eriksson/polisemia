@@ -37,6 +37,43 @@ document.querySelectorAll('.expand').forEach((item) => {
     })
 })
 
+// search for articles 
+
+document.querySelector('#search-art').addEventListener('input', () => {
+    let searchText = event.target.value.toLowerCase()
+    let searchArray = []
+    magNum.filter((item) => {
+        if (item.name.toLowerCase().includes(searchText)) {
+            searchArray.push({
+                title: item.name,
+                url: item.url
+            })
+        }
+    })
+    magNum.forEach((item) => {
+        item.articles.filter((article) => {
+            if (article.title.toLowerCase().includes(searchText) || article.author.toLowerCase().includes(searchText)) {
+                searchArray.push({
+                    title: article.title,
+                    author: article.author,
+                    url: article.url
+                })
+            }
+        })
+    })
+    document.querySelector('#search-result').innerHTML = ''
+    if (searchArray.length > 0) {
+    searchArray.forEach((item) => {
+        const resultEl = document.createElement('p')
+        resultEl.innerHTML = !item.author ? `<a href="${item.url}" target="_blank">${item.title}</a>` : `<a href="${item.url}" target="_blank">${item.author}, ${item.title}</a>`
+        console.log(resultEl)
+        document.querySelector('#search-result').appendChild(resultEl)
+        })
+    } else {
+        document.querySelector('#search-result').innerHTML = ''
+    }
+})
+
 
 
 
