@@ -24,6 +24,13 @@ body {
         p {
             line-height: 1.5rem;
             margin-top: 10px;
+            a {
+                color: brown;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
         }
     }
 }
@@ -39,3 +46,5 @@ h1, h2, h3, h4, h5, h6 {
 section {
     margin-left: 20px;
 }
+
+

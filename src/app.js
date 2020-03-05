@@ -1,5 +1,16 @@
 import { magNum } from './articles'
 
+// styling nav element representing current page 
+
+const linkElements = [...document.querySelectorAll('.menu')]
+const menuItem = linkElements.find((item) => {
+    if (window.location.href.includes(item.firstElementChild.href)) {
+        return item
+    }
+})
+
+menuItem.classList.add('show-menu')
+
 // crating side-nav with all the magazine numbers and expandable list of all articles withinh the number
 
 // rendring all the numbers from an array
@@ -28,6 +39,7 @@ document.querySelectorAll('.expand').forEach((item) => {
         event.preventDefault()
         let toggleEl = event.toElement.nextElementSibling
         toggleEl.classList.toggle('show')
+        //changing the arrow sign
         let arrowEl = event.toElement.lastElementChild
         if (arrowEl.getAttribute('src') === 'images/keyboard_arrow_down-24px.svg') {
             arrowEl.setAttribute('src', 'images/keyboard_arrow_up-24px.svg')
@@ -42,6 +54,7 @@ document.querySelectorAll('.expand').forEach((item) => {
 document.querySelector('#search-art').addEventListener('input', () => {
     let searchText = event.target.value.toLowerCase()
     let searchArray = []
+
     magNum.filter((item) => {
         if (item.name.toLowerCase().includes(searchText)) {
             searchArray.push({
@@ -61,12 +74,13 @@ document.querySelector('#search-art').addEventListener('input', () => {
             }
         })
     })
-    document.querySelector('#search-result').innerHTML = ''
-    if (searchArray.length > 0) {
+    // rendering the results
+    
+    if (searchText.length > 0) {
+        document.querySelector('#search-result').innerHTML = ''
     searchArray.forEach((item) => {
         const resultEl = document.createElement('p')
         resultEl.innerHTML = !item.author ? `<a href="${item.url}" target="_blank">${item.title}</a>` : `<a href="${item.url}" target="_blank">${item.author}, ${item.title}</a>`
-        console.log(resultEl)
         document.querySelector('#search-result').appendChild(resultEl)
         })
     } else {

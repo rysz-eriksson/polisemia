@@ -23,10 +23,8 @@ header {
                 flex-direction: column;
                 justify-content: center;
                 position: relative;
-                transition: all .3s ease;
                 .dropdown-menu {
                     opacity: 0;
-                    visibility: collapse;
                     transition: .5s ease;
                     ul {
                     margin-top: 1.3rem;
@@ -49,7 +47,6 @@ header {
                             margin: 0 10px;
                             border-bottom: 1px dotted lightgray;   
                             padding: 8px 0;
-                            color: black;
                             
                             &:hover {
                                 color: brown;
@@ -58,8 +55,10 @@ header {
                     }
                 }
             }
+            &:hover >  a {
+                color: brown;
+            }
             &:hover > .dropdown-menu {
-                visibility: visible;
                 opacity: 1;
             }
                 a {
@@ -83,19 +82,15 @@ header {
     background-color: brown;
     position: absolute;
     opacity: 0;
-    transition: ease .3s;
-}
-&:hover {
-    a {
-        color: brown;
-    }
-}
-&:hover,
-&:focus {
-    &::after {
-        opacity: 1;
-        }  
+    transition: .3s ease;
     }
 }
 
+.show-menu {
+    opacity: 1
+}
+
+.show-menu::after {
+    opacity: inherit
+}
 

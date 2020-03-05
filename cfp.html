@@ -10,12 +10,12 @@
   <header>
   <nav>
     <ul>
-        <li class="menu"><a href="./index.html">Strona Główna</a></li>
-        <li class="menu"><a href="">Nowy numer</a></li>
-        <li class="menu"><a href="#">Wszystkie numery &#9662;</a>
-        <div class="dropdown-menu">
-          <ul>
-          <li><a href="http://www.polisemia.com.pl/numery-czasopisma/numer-1-2019-21---rewolucje">1/2019 – Rewolucje </a></li>
+      <li class="menu"><a href="./index.html">Strona Główna</a></li>
+      <li class="menu"><a href="http://www.polisemia.com.pl/numery-czasopisma/numer-1-2019-21---rewolucje">Nowy numer</a></li>
+      <li class="menu"><a href="#">Wszystkie numery &#9662;</a>
+      <div class="dropdown-menu">
+        <ul>
+        <li><a href="http://www.polisemia.com.pl/numery-czasopisma/numer-1-2019-21---rewolucje">1/2019 – Rewolucje </a></li>
 <li><a href="http://www.polisemia.com.pl/numery-czasopisma/rewolucje">2/2018 – Strach</a></li>
 <li><a href="http://www.polisemia.com.pl/numery-czasopisma/Numer-22018-20---Strach">1/2018 – Przyszłość</a></li>
 <li><a href="http://www.polisemia.com.pl/numery-czasopisma/numer-2-2017-przeszlosc">2/2017 – Przeszłość</a></li>
@@ -35,13 +35,13 @@
 <li><a href="http://www.polisemia.com.pl/numery-czasopisma/numer-4-2010-4">4/2010 – Strategie awangardowe w poezji</a></li>
 <li><a href="http://www.polisemia.com.pl/numery-czasopisma/numer-3-2010-3">3/2010 – Polityczność literatury (II – literatura polska)</a></li>
 <li><a href="http://www.polisemia.com.pl/numery-czasopisma/numer-2-2010-2">2/2010 – Polityczność literatury (I – literatura obca i teoria)</a></li>
-        </ul>
-      </div>
-        </li>
-        <li class="menu"><a href="#">Call for papers</a></li>
-        <li class="menu"><a href="./dla-autorow.html">Dla Autorów</a></li>
-        <li class="menu"><a href="#">Redakcja</a></li>
-    </ul>
+      </ul>
+    </div>
+      </li>
+      <li class="menu"><a href="./cfp.html">Call for papers</a></li>
+      <li class="menu"><a href="./dla-autorow.html">Dla Autorów</a></li>
+      <li class="menu"><a href="#">Redakcja</a></li>
+  </ul>
 </nav>
 </header>
 <div class="site-layout">
@@ -78,10 +78,16 @@
     </article>
   </div>
   <div class="side-bar">
-    <nav class="side-nav">
+    <div class="side-nav">
+    <div class="search-field">
+      <input type="text" class="input" id="search-art" placeholder="Search for articles, authors, numbers">
+      <div id="search-result"></div>
+    </div>
+    <nav class=>
       <ul class="side-menu">
-      </ul>
-    </nav>
+        </ul>
+      </nav>
+    </div>
   </div>
 </div>
     <script src="bundle.js" async></script>

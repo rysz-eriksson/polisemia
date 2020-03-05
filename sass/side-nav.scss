@@ -1,23 +1,45 @@
 .side-nav {
     margin: 1rem;
     margin-left: 3rem;
-    ul {
-        list-style: none;
-        li {
-            border: 1px solid brown;
-            div.expand {
-                padding: 1rem;
-                display: flex;
-                justify-content: space-between;
-                &> * {
-                    pointer-events: none;
+        ul {
+            list-style: none;
+            li {
+                border: 1px solid brown;
+                div.expand {
+                    padding: 1rem;
+                    display: flex;
+                    justify-content: space-between;
+                    &> * {
+                        pointer-events: none;
+                    }
+                }
+                ul {
+                    display: none;
+                    li {
+                        padding: .5rem;
+                        a {
+                            text-decoration: none;
+                            font-size: .9rem;
+                            color: black;
+                        }
+                        &:hover a {
+                            color: brown
+                        }
+                    }
                 }
             }
-            ul {
-                display: none;
+        }
+        p {
+            padding: .3rem 0;
+            a {
+                text-decoration: none;
+                font-size: .9rem;
+                color: black;
+            }
+            &:hover a {
+                color: brown
             }
         }
-    }
 }
 
 .show {
